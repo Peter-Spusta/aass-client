@@ -1,0 +1,7 @@
+<div *ngIf="projects.length > 0 && projectToOpen.length === 0">
+    <div *ngFor="let project of projects">
+        <p (click)="projectClicked(project.id)">{{project.name}}</p>
+    </div>
+</div>
+
+<app-project-details *ngIf="projectToOpen.length > 0" [project]="projectToOpen[0]"><app-project-details>

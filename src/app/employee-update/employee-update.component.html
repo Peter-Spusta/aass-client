@@ -1,0 +1,10 @@
+<h1>Employee Update</h1>
+<div>
+    <label>Name: </label> 
+    <input placeholder="Insert Employee Name" type="text" (keyup)="setName($event)">
+    <br>
+    <label>Age: </label> 
+    <input placeholder="Insert Employee Age" type="text" (keyup)="setAge($event)">
+    <br>
+</div>
+<button (click)="saveEmployee()">Save</button>

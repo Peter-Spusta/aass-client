@@ -1,0 +1,17 @@
+<div class="roles">
+    <h2>Roles</h2>
+    <div *ngFor="let role of roles">
+        <p (click)="roleClicked(role)">{{role.description}}</p>
+    </div>
+    <span>{{choosedRole.description}}</span>
+    <br>
+    <button (click)="createRole()">Add</button>
+</div>
+<div class="employees">
+    <h2>Employees</h2>
+    <div *ngFor="let emp of employees">
+        <p (click)="employeeClicked(emp)">{{emp.name}}</p>
+    </div>
+    <span>{{choosedEmployee.name}}</span>
+    <!-- <button (click)="chooseEmployee()">Add</button> -->
+</div>

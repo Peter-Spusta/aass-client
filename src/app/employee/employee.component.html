@@ -1,0 +1,7 @@
+<div *ngIf="employees.length > 0 && employeeToOpen.length === 0">
+    <div *ngFor="let employee of employees">
+        <p (click)="employeeClicked(employee.id)">{{employee.name}}</p>
+    </div>
+</div>
+
+<app-employee-details *ngIf="employeeToOpen.length > 0" [employee]="employeeToOpen[0]"><app-employee-details>

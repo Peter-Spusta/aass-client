@@ -1,0 +1,20 @@
+<div *ngIf="update === false">
+    <h1>Employee Details</h1>
+    <div>
+        <p>Name: {{employee.name}}</p>
+        <p>Age: {{employee.age}}</p>
+        <p *ngFor="let role of roles">Role: {{role.description}}</p>
+    </div>
+    <button (click)="updateEmployee()">Update</button>
+
+    <div class="tasks">
+        <h2>Tasks</h2>
+        <div *ngFor="let task of tasks">
+            <p (click)="taskClicked(task.id)">{{task.name}}</p>
+        </div>
+        <button (click)="addTask()">Add</button>
+    </div>
+</div>
+
+<app-employee-update *ngIf="update" (close)="update = false" [employee]="employee"></app-employee-update>
+

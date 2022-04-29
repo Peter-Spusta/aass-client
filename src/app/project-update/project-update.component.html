@@ -1,0 +1,18 @@
+<h1>Project Update</h1>
+<div>
+    <label>Name: </label> 
+    <input placeholder="Insert Project Name" type="text" (keyup)="setName($event)">
+    <br>
+    <label>Description: </label> 
+    <input placeholder="Insert Project Description" type="text" (keyup)="setDescription($event)">
+    <br>
+    <label>Location: </label>
+        <select [(ngModel)]="choosedLocation" (change)="setLocation()">
+            <option *ngFor="let location of locations"
+                [value]="location.name"
+                [attr.selected]="location">
+                <p>{{location.name}}</p>
+            </option>
+        </select>
+</div>
+<button (click)="saveProject()">Save</button>

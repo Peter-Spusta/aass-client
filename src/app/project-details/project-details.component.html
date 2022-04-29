@@ -1,0 +1,19 @@
+<div *ngIf="update === false">
+    <h1>Project Details</h1>
+    <div>
+        <p>Name: {{project.name}}</p>
+        <p>Description: {{project.description}}</p>
+        <p>Location: {{project.location}}</p>
+    </div>
+    <button (click)="updateProject()">Update</button>
+
+    <div class="roles">
+        <h2>Roles</h2>
+        <div *ngFor="let role of roles">
+            <p (click)="roleClicked(role.id)">{{role.description}}</p>
+        </div>
+        <button (click)="addRole()">Add</button>
+    </div>
+</div>
+
+<app-project-update *ngIf="update" (close)="update = false" [project]="project"></app-project-update>
